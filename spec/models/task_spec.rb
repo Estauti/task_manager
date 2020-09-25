@@ -33,6 +33,31 @@ RSpec.describe Task, type: :model do
           expect(task).to be_invalid
         end
       end
+
+      context 'when due date' do
+        it 'is null' do
+          task = build(:task, due_date: nil)
+          expect(task).to be_invalid
+        end
+      end
+    end
+
+    describe 'raises an error' do
+      context 'when status' do
+        it 'is not one of the available' do
+          expect do
+            build(:task, status: FFaker::Lorem.word)
+          end.to raise_error(ArgumentError)
+        end
+      end
+
+      context 'when priority' do
+        it 'is not one of the available' do
+          expect do
+            build(:task, priority: FFaker::Lorem.word)
+          end.to raise_error(ArgumentError)
+        end
+      end
     end
   end
 end
