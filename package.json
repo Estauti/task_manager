@@ -1,0 +1,7 @@
+{
+  "name": "tasks_manager",
+  "private": true,
+  "dependencies": {
+    "tailwindcss": "^1.8.10"
+  }
+}
