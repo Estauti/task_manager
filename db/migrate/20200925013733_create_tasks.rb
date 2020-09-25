@@ -1,0 +1,13 @@
+class CreateTasks < ActiveRecord::Migration[5.2]
+  def change
+    create_table :tasks do |t|
+      t.string :title, null: false
+      t.string :description, null: false, default: ""
+      t.datetime :due_date, null: false
+      t.integer :priority, null: false
+      t.integer :status, null: false
+
+      t.timestamps
+    end
+  end
+end
