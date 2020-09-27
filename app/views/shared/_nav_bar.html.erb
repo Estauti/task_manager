@@ -3,9 +3,17 @@
     <%= image_tag('task_icon.png', size: "40") %>
     <span class="pl-2">Task Manager</span>   
 	<% end %>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Tasks", tasks_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Responsibles", responsibles_path, class: "nav-link" %>
+      </li>
+    </ul>
   </div>
 
-	<%= link_to "Create", new_task_path, class: "btn btn-outline-secondary" %>
+	<%= link_to "Create Task", new_task_path, class: "btn btn-outline-secondary" %>
 </nav>

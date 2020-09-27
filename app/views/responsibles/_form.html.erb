@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <span class="text-danger">*</span>
+    <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="float-right">
+    <%= link_to 'Back', responsibles_path, class: "mr-3" %>
+    <%= form.submit 'Save', class: "btn btn-primary" %>
   </div>
 <% end %>
