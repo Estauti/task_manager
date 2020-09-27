@@ -1,0 +1,10 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title"><%= task.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <%= task.priority %>
+      | <%= task.due_date.strftime("%d/%m/%y %H:%M") %>
+    </h6>
+    <p class="card-text" style="font-size: 14px;"><%= task.description %></p>
+  </div>
+</div>

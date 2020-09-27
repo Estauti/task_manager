@@ -3,35 +3,8 @@
 <h1>Tasks</h1>
 
 <div class="row mt-4">
-  <div class="col-3">
-    <h2>Todo</h2>
-
-    <% @tasks.where(status: 'todo').each do |task| %> 
-      <%= task.title %>
-    <% end %>
-  </div>
-
-  <div class="col-3">
-    <h2>Doing</h2>
-
-    <% @tasks.where(status: 'doing').each do |task| %> 
-      <%= task.title %>
-    <% end %>
-  </div>
-
-  <div class="col-3">
-    <h2>Done</h2>
-
-    <% @tasks.where(status: 'done').each do |task| %> 
-      <%= task.title %>
-    <% end %>
-  </div>
-
-  <div class="col-3">
-    <h2>Trash</h2>
-
-    <% @tasks.where(status: 'trash').each do |task| %> 
-      <%= task.title %>
-    <% end %>
-  </div>
+  <%= render 'tasks/index/status_column', title: 'Todo', tasks: @tasks.where(status: 'todo') %>
+  <%= render 'tasks/index/status_column', title: 'Doing', tasks: @tasks.where(status: 'doing') %>
+  <%= render 'tasks/index/status_column', title: 'Done', tasks: @tasks.where(status: 'done') %>
+  <%= render 'tasks/index/status_column', title: 'Trash', tasks: @tasks.where(status: 'trash') %>
 </div>
