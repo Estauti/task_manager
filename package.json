@@ -2,11 +2,7 @@
   "name": "tasks_manager",
   "private": true,
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@rails/webpacker": "5.2.1",
-    "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
   }
 }
