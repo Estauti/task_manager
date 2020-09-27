@@ -22,6 +22,6 @@ class Task < ApplicationRecord
   def due_date_in_future
     return if due_date && due_date > DateTime.now
 
-    errors.add(:due_date, "Due date must be in the future")
+    errors.add(:due_date, "must be in the future")
   end
 end
