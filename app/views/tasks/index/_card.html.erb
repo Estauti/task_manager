@@ -1,6 +1,8 @@
 <div class="card mb-2">
   <div class="card-body">
-    <h5 class="card-title"><%= task.title %></h5>
+    <div class="mb-1">
+      <%= link_to task.title, task_path(task.id), class: "card-title", style: "font-size: 20px;" %>
+    </div>
     <h6 class="card-subtitle mb-2 text-muted">
       <%= task.priority %>
       | <%= task.due_date.strftime("%d/%m/%y %H:%M") %>
