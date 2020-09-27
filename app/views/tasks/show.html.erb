@@ -10,7 +10,7 @@
 
   <p>
     <strong>Due date:</strong>
-    <%= @task.due_date %>
+    <%= @task.due_date.strftime("%d/%m/%y %H:%M") %>
   </p>
 
   <p>
@@ -26,6 +26,11 @@
   <p>
     <strong>Responsible:</strong>
     <%= @task.responsible.name %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= @task.created_at.strftime("%d/%m/%y %H:%M") %>
   </p>
 </div>
 
