@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   validates_presence_of :title, :description, :due_date
+  validate :due_date_in_future
 
   STATUSES = %w(todo doing done trash).freeze
   PRIORITIES = %w(low medium high urgent).freeze
@@ -17,4 +18,10 @@ class Task < ApplicationRecord
     high:   2,
     urgent: 3
   }
+
+  def due_date_in_future
+    return if due_date && due_date > DateTime.now
+
+    errors.add(:due_date, "Due date must be in the future")
+  end
 end

@@ -39,6 +39,11 @@ RSpec.describe Task, type: :model do
           task = build(:task, due_date: nil)
           expect(task).to be_invalid
         end
+
+        it 'is before creation' do
+          task = build(:task, due_date: DateTime.now - 1.hour)
+          expect(task).to be_invalid
+        end
       end
     end
 
