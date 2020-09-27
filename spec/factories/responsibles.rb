@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :responsible do
-    name { "MyString" }
+    name { FFaker::Lorem.sentence }
   end
 end
