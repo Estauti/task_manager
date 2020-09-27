@@ -16,11 +16,11 @@ RSpec.describe "/responsibles", type: :request do
   # Responsible. As you add validations to Responsible, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:responsible)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:responsible, name: nil)
   }
 
   describe "GET /index" do
@@ -85,14 +85,17 @@ RSpec.describe "/responsibles", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: FFaker::Lorem.sentence
+        }
       }
 
       it "updates the requested responsible" do
         responsible = Responsible.create! valid_attributes
         patch responsible_url(responsible), params: { responsible: new_attributes }
         responsible.reload
-        skip("Add assertions for updated state")
+        
+        expect(responsible.name).to eq(new_attributes[:name])
       end
 
       it "redirects to the responsible" do
