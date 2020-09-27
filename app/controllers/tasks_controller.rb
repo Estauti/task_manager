@@ -67,7 +67,6 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
 
     rescue ActiveRecord::RecordNotFound 
-      # redirect_to 'errors#error_404', status: :not_found
       redirect_to '/not_found'
     end
 

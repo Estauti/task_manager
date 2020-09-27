@@ -65,6 +65,9 @@ class ResponsiblesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_responsible
       @responsible = Responsible.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      redirect_to '/not_found'
     end
 
     # Only allow a list of trusted parameters through.
