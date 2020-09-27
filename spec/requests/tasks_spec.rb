@@ -16,7 +16,7 @@ RSpec.describe "/tasks", type: :request do
   # Task. As you add validations to Task, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    attributes_for(:task)
+    attributes_for(:task).merge(responsible_id: create(:responsible).id)
   }
 
   let(:invalid_attributes) {
