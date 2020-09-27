@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :responsibles
   root to: "tasks#index"
 
   resources :tasks
