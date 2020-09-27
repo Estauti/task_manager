@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :due_date %>
-    <%= form.datetime_select :due_date %>
+    <%= form.datetime_select :due_date, {}, {class: "form-control d-inline", style: "width: auto;"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :priority %>
-    <%= form.number_field :priority %>
+    <%= form.number_field :priority, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.number_field :status, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="float-right">
+    <%= link_to 'Back', tasks_path, class: "mr-3" %>
+    <%= form.submit 'Create', class: "btn btn-primary" %>
   </div>
 <% end %>
