@@ -37,6 +37,12 @@ RSpec.describe "/tasks", type: :request do
       get task_url(task)
       expect(response).to be_successful
     end
+
+    it 'returns 404 if not found' do
+      get task_url(0)
+
+      expect(response).to redirect_to("/not_found")
+    end
   end
 
   describe "GET /new" do

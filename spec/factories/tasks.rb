@@ -4,6 +4,6 @@ FactoryBot.define do
     description { FFaker::Lorem.paragraph }
     priority { Task::PRIORITIES.sample }
     status { Task::STATUSES.sample }
-    due_date { DateTime.now }
+    due_date { DateTime.now + 1.hour }
   end
 end
