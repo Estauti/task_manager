@@ -2,7 +2,7 @@
   "name": "tasks_manager",
   "private": true,
   "dependencies": {
+    "bootstrap-icons": "^1.0.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

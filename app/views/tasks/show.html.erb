@@ -4,24 +4,29 @@
 
 <div class="mt-3">
   <p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+    <strong>Description:</strong>
+    <%= @task.description %>
+  </p>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @task.due_date %>
-</p>
+  <p>
+    <strong>Due date:</strong>
+    <%= @task.due_date %>
+  </p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @task.priority %>
-</p>
+  <p>
+    <strong>Priority:</strong>
+    <%= @task.priority %>
+  </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @task.status %>
-</p>
+  <p>
+    <strong>Status:</strong>
+    <%= @task.status %>
+  </p>
+
+  <p>
+    <strong>Responsible:</strong>
+    <%= @task.responsible.name %>
+  </p>
 </div>
 
 <div class="mt-5">
