@@ -45,6 +45,13 @@ RSpec.describe Task, type: :model do
           expect(task).to be_invalid
         end
       end
+
+      context 'when responsible' do
+        it 'is null' do
+          task = build(:task, responsible: nil)
+          expect(task).to be_invalid
+        end
+      end
     end
 
     describe 'raises an error' do

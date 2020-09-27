@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
-  validates_presence_of :title, :description, :due_date
+  belongs_to :responsible
+
+  validates_presence_of :title, :description, :due_date, :responsible
   validate :due_date_in_future
 
   STATUSES = %w(todo doing done trash).freeze
